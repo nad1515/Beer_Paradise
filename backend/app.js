@@ -25,7 +25,8 @@ app.use((req, res, next) => {
  const beerRoutes = require('./routes/beers');
  app.use('/api/beers', beerRoutes);
 
-
+ const path = require('path');
+ app.use('/images', express.static(path.join(__dirname,'images')));
 
 module.exports = app;
 
