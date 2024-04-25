@@ -12,7 +12,7 @@ const multer = require('../middleware/multer-config');
   
 
  //: Route pour creer les bières
- router.post('/',auth, beerCtrl.createBeer );
+//  router.post('/',auth, beerCtrl.createBeer );
  
  //: Route pour récupérer toutes les bières
  router.get('/',auth, beerCtrl.getAllBeers);
