@@ -21,14 +21,16 @@ const multer = require('../middleware/multer-config');
  router.get('/:id', auth, beerCtrl.getOneBeer);
 
  //: Route pour modifier et mettre à jour une bière
- router.put('/:id', auth, beerCtrl.modifyBeer);
+ router.put('/:id', auth, multer, beerCtrl.modifyBeer);
 
  //: Route pour modifier suprimer une bière
  router.delete('/:id', auth, beerCtrl.deleteBeer);
 
  //: Route pour créer ou ajouter une bière
  router.post('/',auth, multer, beerCtrl.createBeer );
+
+ //: Route pour liker/ disliker une bière
+ router.post('/:id/like', auth, beerCtrl.likeBeer);
  
  module.exports = router;
 
- //commentaire inutile lol
